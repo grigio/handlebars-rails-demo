@@ -1,0 +1,19 @@
+<% title "Notes" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+  <% for note in @notes %>
+    <tr>
+      <td><%= note.title %></td>
+      <td><%= note.content %></td>
+      <td><%= link_to "Show", note %></td>
+      <td><%= link_to "Edit", edit_note_path(note) %></td>
+      <td><%= link_to "Destroy", note, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Note", new_note_path %></p>
